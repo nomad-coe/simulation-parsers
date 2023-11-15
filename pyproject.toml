@@ -35,7 +35,7 @@ dev = [
 [tool.setuptools.packages.find]
 where = [
     ".",
-    "simulationparsers",
+    "simulationparsers/abacus",
 ]
 
 [tool.ruff]
@@ -61,9 +61,6 @@ ignore = [
     "PLR5501", # else-if-used
 ]
 fixable = ["ALL"]
-
-[tool.setuptools.packages.find]
-include = ["simulationparsers*"]
 
 [tool.setuptools.package-data]
 simulationparsers = ['*/metadata.yaml', '*/README.md']
