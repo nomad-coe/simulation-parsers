@@ -32,6 +32,12 @@ dev = [
     'ruff==0.1.4'
 ]
 
+[tool.setuptools.packages.find]
+where = [
+    ".",
+    "simulationparsers",
+]
+
 [tool.ruff]
 include = ["simulationparsers/*.py", "tests/*.py"]
 select = [
@@ -60,4 +66,4 @@ fixable = ["ALL"]
 include = ["simulationparsers*"]
 
 [tool.setuptools.package-data]
-electronicparsers = ['*/metadata.yaml', '*/README.md']
+simulationparsers = ['*/metadata.yaml', '*/README.md']
