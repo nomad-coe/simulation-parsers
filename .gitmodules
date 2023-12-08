@@ -1,3 +1,0 @@
-[submodule "simulationparsers/abacus"]
-	path = simulationparsers/abacus
-	url = https://github.com/nomad-coe/nomad-parser-abacus-plugin.git
