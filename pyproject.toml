@@ -38,7 +38,7 @@ where = [
 ]
 
 [tool.ruff]
-include = ["simulationparsers/*.py", "tests/*.py"]
+include = ["simulationparsers/*.py""]
 select = [
     "E", # pycodestyle
     "W", # pycodestyle

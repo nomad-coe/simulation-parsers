@@ -1,3 +1,3 @@
 [submodule "simulationparsers/msspec"]
 	path = simulationparsers/msspec
-	url = https://github.com/nomad-coe/nomad-parser-plugin-msspec.git
+	url = https://github.com/nomad-coe/nomad-parser-plugin-msspec
