@@ -1,0 +1,6 @@
+[submodule "simulationparsers/wannier90"]
+	path = simulationparsers/wannier90
+	url = https://github.com/nomad-coe/nomad-parser-wannier90
+[submodule "simulationparsers/magres"]
+	path = simulationparsers/magres
+	url = https://github.com/nomad-coe/nomad-parser-magres
