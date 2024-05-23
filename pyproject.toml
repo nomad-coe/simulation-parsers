@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=61.0.0", "setuptools-scm>=8.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -7,15 +7,24 @@ name = 'simulationparsers'
 version = '1.1'
 description = 'Collection of NOMAD parsers for simulation codes.'
 readme = "README.md"
-authors = [{ name = "The NOMAD Authors" }]
+authors = [
+    { name = "Alvin Noe Ladines", email = "alvin.noe.ladines@physik.hu-berlin.de" },
+    { name = "Jose M. Pizarro", email = "jose.pizarro@physik.hu-berlin.de" },
+]
+maintainers = [
+    { name = "Alvin Noe Ladines", email = "alvin.noe.ladines@physik.hu-berlin.de" },
+    { name = "Jose M. Pizarro", email = "jose.pizarro@physik.hu-berlin.de" },
+]
 license = { file = "LICENSE" }
+requires-python = ">=3.9"
 dependencies = [
     "nomad-lab>=1.2.0",
     "nomad-schema-plugin-run@git+https://github.com/nomad-coe/nomad-schema-plugin-run.git@develop",
 ]
 
 [project.urls]
-homepage = "https://github.com/nomad-coe/simulation-parsers"
+"Homepage" = "https://github.com/nomad-coe/simulation-parsers"
+"Bug Tracker" = "https://github.com/nomad-coe/simulation-parsers/issues"
 
 [project.optional-dependencies]
 dev = [
@@ -32,16 +41,18 @@ dev = [
 where = [
     ".",
     "simulationparsers/abacus",
+    "simulationparsers/wannier90",
+    "simulationparsers/magres",
 ]
 
 [tool.ruff]
 include = ["simulationparsers/*.py", "tests/*.py"]
-select = [
+lint.select = [
     "E", # pycodestyle
     "W", # pycodestyle
     "PL", # pylint
 ]
-ignore = [
+lint.ignore = [
     "E501", # Line too long ({width} > {limit} characters)
     "E701", # Multiple statements on one line (colon)
     "E731", # Do not assign a lambda expression, use a def
@@ -56,7 +67,24 @@ ignore = [
     "PLR1714", # consider-using-in
     "PLR5501", # else-if-used
 ]
-fixable = ["ALL"]
+lint.fixable = ["ALL"]
+
+# Same as Black.
+line-length = 88
+indent-width = 4
+
+[tool.ruff.format]
+# use single quotes for strings.
+quote-style = "single"
+
+# indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
 
 [tool.setuptools.package-data]
 simulationparsers = ['*/metadata.yaml', '*/README.md']
