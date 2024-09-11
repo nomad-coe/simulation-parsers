@@ -3,14 +3,14 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = 'simulationparsers'
+name = 'nomad-parser-plugins-simulation'
 version = '1.0'
 description = 'Collection of NOMAD parsers for simulation codes.'
 readme = "README.md"
 authors = [{ name = "The NOMAD Authors" }]
 license = { file = "LICENSE" }
 dependencies = [
-    "nomad-lab>=1.2.0",
+    "nomad-lab>=1.3.6",
     "nomad-schema-plugin-run>=1.0.1",
 ]
 
