@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/simulationparsers
+      url: https://pypi.org/p/nomad-parser-plugins-simulation
     permissions:
       id-token: write # IMPORTANT: mandatory for trusted publishing
-
+  
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python

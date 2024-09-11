@@ -13,14 +13,13 @@ jobs:
       run: |
         pip install --upgrade pip
         # we need the latest nomad version for testing
-        pip install nomad-lab[infrastructure]@git+https://github.com/nomad-coe/nomad.git@develop
-        pip install '.[dev]' --index-url https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple
+        # pip install nomad-lab[infrastructure]@git+https://github.com/nomad-coe/nomad.git@develop
+        pip install '.[dev,tests]' --index-url https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple
         pip install coverage coveralls
     - name: mypy
       run: |
-        python -m mypy --ignore-missing-imports --follow-imports=silent --no-strict-optional simulationparsers
+        python -m mypy --ignore-missing-imports --follow-imports=silent --no-strict-optional simulationparsers tests
     - name: Test with pytest
-      if: success() || failure()
       run: |
         python -m coverage run -m pytest -sv tests
     - name: Submit to coveralls
@@ -50,3 +49,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: chartboost/ruff-action@v1
+        with:
+          args: "check"
