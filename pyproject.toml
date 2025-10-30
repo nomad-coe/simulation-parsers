@@ -19,12 +19,12 @@ homepage = "https://github.com/nomad-coe/simulation-parsers"
 
 [project.optional-dependencies]
 dev = [
-    'mypy==1.0.1',
+    'mypy>=1.15',
     'pytest',
     'pytest-timeout',
     'pytest-cov',
-    'astroid==2.11.7',
-    'typing-extensions==4.4.0',
+    'astroid>=2.11.7',
+    'typing-extensions>=4.12',
     'ruff'
 ]
 
